@@ -1,0 +1,24 @@
+@function size($multiplier,$units){
+  $last : 1;
+  $current : 2;
+
+  @for $i from 1 through $multiplier{
+      $temp : $current + $last;
+      $last : $current;
+      $current : $temp;
+  }
+
+  @return $current + $units;
+}
+
+#content{
+  max-width:600px;
+  margin: 0 auto;
+  margin-top:size(1,px);
+  margin-top:size(2,px);
+  margin-top:size(3,px);
+  margin-top:size(4,px);
+  margin-top:size(5,px);
+  margin-top:size(6,px);
+  margin-top:size(7,px);
+}
